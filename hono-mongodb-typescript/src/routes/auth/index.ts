@@ -31,6 +31,10 @@ const signInSchema = z.object({
     .max(20, { message: "Password must be at most 20 characters" }),
 });
 
+const refreshTokenSchema = z.object({
+  refreshToken: z.string(),
+});
+
 authRoute.post("/signup", zValidator("json", signUpSchema), async (c) => {
   const { firstName, lastName, email, password } = c.req.valid("json");
 
@@ -84,5 +88,21 @@ authRoute.post("/signin", zValidator("json", signInSchema), async (c) => {
     refreshToken,
   });
 });
+
+authRoute.post(
+  "/refresh-token",
+  zValidator("json", refreshTokenSchema),
+  async (c) => {
+    const { refreshToken } = c.req.valid("json");
+    try {
+      const data = verify(refreshToken, env.JWT_SECRET);
+      const accessToken = sign(data, env.JWT_SECRET, { expiresIn: "1m" });
+      return c.json({ accessToken });
+    } catch (error) {
+      c.status(401);
+      return c.text("Invalid token");
+    }
+  },
+);
 
 export default authRoute;
