@@ -40,16 +40,19 @@ export const routes: TRoute[] = [
       {
         name: "sub route 4",
         href: "/subroute4",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
       {
         name: "sub route 5",
         href: "/subroute5",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
       {
         name: "sub route 6",
         href: "/subroute6",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
     ],
@@ -60,11 +63,13 @@ export const routes: TRoute[] = [
       {
         name: "sub route 7",
         href: "/subroute7",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
       {
         name: "sub route 8",
         href: "/subroute8",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
     ],
@@ -75,11 +80,13 @@ export const routes: TRoute[] = [
       {
         name: "sub route 9",
         href: "/subroute9",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
       {
         name: "sub route 10",
         href: "/subroute10",
+        description: "sub route 2 description",
         image: "/images/placeholder.svg",
       },
     ],
