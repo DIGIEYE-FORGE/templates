@@ -53,7 +53,7 @@ export function UpBarMobile({ className, ...props }: IUpbarProps) {
             <SheetTitle></SheetTitle>
             <SheetDescription></SheetDescription>
           </SheetHeader>
-          <div className="mb-2 flex h-[90%] w-full flex-col gap-4 overflow-y-auto">
+          <div className="hide-scrollbar mb-2 flex h-[90%] w-full flex-col gap-4 overflow-y-auto px-4">
             <Image
               src="/logo.png"
               alt="Logo"
@@ -66,15 +66,14 @@ export function UpBarMobile({ className, ...props }: IUpbarProps) {
                 const { name, href, subRoutes } = route;
                 if (href) {
                   return (
-                    <Link
-                      href={href}
+                    <div
                       key={index}
-                      legacyBehavior
-                      passHref
-                      className="flex h-[3.5rem] items-center border-b text-xl font-semibold capitalize"
+                      className="flex h-[3rem] items-center border-b px-1 text-xl font-medium capitalize"
                     >
-                      {name}
-                    </Link>
+                      <Link href={href} legacyBehavior passHref>
+                        {name}
+                      </Link>
+                    </div>
                   );
                 } else if (subRoutes) {
                   return (

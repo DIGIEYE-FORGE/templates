@@ -86,3 +86,7 @@
 .debug > * > * {
   border: 1px solid blue !important;
 }
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
