@@ -7,7 +7,19 @@ import {
   SectionSubtitle,
   SectionTitle,
 } from "../components/section";
-import { faqData, footerData, heroData, sections } from "./data";
+import {
+  faqData,
+  footerData,
+  heroData,
+  section1Data,
+  section2Data,
+  section3Data,
+  section4Data,
+  section5Data,
+  section6Data,
+  section7Data,
+  section8Data,
+} from "./data";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -158,9 +170,9 @@ export default function Home() {
     <main>
       <HeroSection />
       <Section>
-        <SectionTitle>{sections[0].title}</SectionTitle>
+        <SectionTitle>{section1Data.title}</SectionTitle>
         <Marquee pauseOnHover className="bg-primary/10 [--duration:30s]">
-          {sections[0].data.map((src, index) => (
+          {section1Data.data.map((src, index) => (
             <div className="py-6" key={index}>
               <Image
                 src={src}
@@ -174,10 +186,10 @@ export default function Home() {
         </Marquee>
       </Section>
       <Section>
-        <SectionTitle>{sections[1].title}</SectionTitle>
+        <SectionTitle>{section2Data.title}</SectionTitle>
         <SectionContent>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {sections[1].data.map((challenge, index) => (
+            {section2Data.data.map((challenge, index) => (
               <Card key={index}>
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
@@ -198,12 +210,12 @@ export default function Home() {
         </SectionContent>
       </Section>
       <Section>
-        <SectionTitle>{sections[2].title}</SectionTitle>
+        <SectionTitle>{section3Data.title}</SectionTitle>
 
         <SectionContent>
           <Carousel className="w-full">
             <CarouselContent>
-              {sections[2].data.map((slide, index) => (
+              {section3Data.data.map((slide, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1">
                     <Card className="rouhnded-lg grid overflow-hidden md:grid-cols-2">
@@ -244,9 +256,9 @@ export default function Home() {
         </div>
       </Section>
       <Section>
-        <SectionTitle>{sections[3].title}</SectionTitle>
+        <SectionTitle>{section4Data.title}</SectionTitle>
         <SectionContent className="grid gap-6 lg:grid-cols-2">
-          {sections[3].data.map(({ image, description, href }, index) => (
+          {section4Data.data.map(({ image, description, href }, index) => (
             <div key={index} className="items-center gap-4 space-y-4">
               <Image
                 src={image}
@@ -266,9 +278,9 @@ export default function Home() {
         </SectionContent>
       </Section>
       <Section>
-        <SectionTitle>{sections[4].title}</SectionTitle>
+        <SectionTitle>{section5Data.title}</SectionTitle>
         <SectionContent className="grid grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-6">
-          {sections[4].data.map(({ image, description, title }, index) => (
+          {section5Data.data.map(({ image, description, title }, index) => (
             <div key={index} className="items-center gap-4 space-y-3">
               <Image
                 src={image}
@@ -284,12 +296,12 @@ export default function Home() {
         </SectionContent>
       </Section>
       <Section>
-        <SectionTitle>{sections[5].title}</SectionTitle>
+        <SectionTitle>{section6Data.title}</SectionTitle>
 
         <SectionContent>
           <Carousel className="w-full">
             <CarouselContent>
-              {sections[5].data.map(({ image, title, description }, index) => (
+              {section6Data.data.map(({ image, title, description }, index) => (
                 <CarouselItem key={index}>
                   <div className="p-1">
                     <Card className="rouhnded-lg grid overflow-hidden md:grid-cols-2">
@@ -321,10 +333,10 @@ export default function Home() {
         </div>
       </Section>
       <Section>
-        <SectionTitle>{sections[6].title}</SectionTitle>
-        <SectionSubtitle>{sections[6].subtitle}</SectionSubtitle>
+        <SectionTitle>{section7Data.title}</SectionTitle>
+        <SectionSubtitle>{section7Data.subtitle}</SectionSubtitle>
         <SectionContent className="grid gap-4 md:gap-6 xl:grid-cols-2">
-          {sections[6].data.map(({ image, title, description }, index) => (
+          {section7Data.data.map(({ image, title, description }, index) => (
             <Card key={index} className="flex h-52 overflow-hidden bg-white">
               <Image
                 src={image}
@@ -342,12 +354,12 @@ export default function Home() {
         </SectionContent>
       </Section>
       <Section>
-        <SectionTitle>{sections[7].title}</SectionTitle>
-        <SectionSubtitle>{sections[7].subtitle}</SectionSubtitle>
+        <SectionTitle>{section8Data.title}</SectionTitle>
+        <SectionSubtitle>{section8Data.subtitle}</SectionSubtitle>
         <SectionContent className="grid gap-4 md:gap-8 xl:grid-cols-2">
           <Carousel className="w-full">
             <CarouselContent>
-              {sections[7].data.images.map((image, index) => (
+              {section8Data.data.images.map((image, index) => (
                 <CarouselItem key={index}>
                   <div className="relative h-96">
                     <Image
@@ -364,7 +376,7 @@ export default function Home() {
             <CarouselNext className="right-4 size-10" />
           </Carousel>
           <div className="flex flex-col justify-center">
-            {Object.entries(sections[7].data.specefications).map(
+            {Object.entries(section8Data.data.specefications).map(
               ([key, value], index) => (
                 <div
                   key={index}
