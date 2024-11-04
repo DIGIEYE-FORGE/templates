@@ -80,13 +80,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={twMerge(
-          "antialiased",
+          "pt-20 antialiased",
           // lexend.className,
           BeVietnamPro.className,
           montserrat.className,
         )}
       >
-        <Upbar />
+        <Upbar className="fixed top-0 z-[11] h-20 bg-background" />
         {children}
       </body>
     </html>

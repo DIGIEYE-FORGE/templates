@@ -9,10 +9,8 @@ import { routes } from "../upbar-desktop/data";
 interface IUpbarProps extends React.HTMLAttributes<HTMLDivElement> {}
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -46,7 +44,11 @@ export function UpBarMobile({ className, ...props }: IUpbarProps) {
       />
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant={"ghost"} className="rounded-full uppercase">
+          <Button
+            variant={"ghost"}
+            size={"icon"}
+            className="rounded-full uppercase"
+          >
             <AlignJustify />
           </Button>
         </SheetTrigger>

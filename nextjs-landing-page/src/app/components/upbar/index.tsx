@@ -4,13 +4,13 @@ import { UpbarDesktop } from "../upbar-desktop";
 import { UpBarMobile } from "../upbar-mobile";
 import { useMediaQuery } from "@/app/hooks/use-media-query";
 
-function UpBar() {
+function UpBar({ className }: { className?: string }) {
   const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   if (isDesktop) {
-    return <UpbarDesktop />;
+    return <UpbarDesktop className={className} />;
   }
-  return <UpBarMobile />;
+  return <UpBarMobile className={className} />;
 }
 
 export default UpBar;
