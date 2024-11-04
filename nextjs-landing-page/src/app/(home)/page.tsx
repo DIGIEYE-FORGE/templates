@@ -19,6 +19,7 @@ import {
   section6Data,
   section7Data,
   section8Data,
+  section9Data,
 } from "./data";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -387,6 +388,28 @@ export default function Home() {
                 </div>
               ),
             )}
+          </div>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionTitle>{section9Data.title}</SectionTitle>
+        <SectionSubtitle>{section9Data.subtitle}</SectionSubtitle>
+        <SectionContent>
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+            {section9Data.data.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center space-y-2 text-center"
+              >
+                <div className="rounded-lg bg-muted p-3">
+                  <feature.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-medium">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </SectionContent>
       </Section>

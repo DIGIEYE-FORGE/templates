@@ -1,6 +1,5 @@
 import {
   BarChart3,
-  Clock,
   FileSpreadsheet,
   LineChart,
   Linkedin,
@@ -8,6 +7,16 @@ import {
   Search,
   Sprout,
   Twitter,
+  GraduationCap,
+  Clock,
+  Sun,
+  Battery,
+  Camera,
+  Shield,
+  MapPin,
+  Tag,
+  Signal,
+  Bell,
 } from "lucide-react";
 
 export const heroData = {
@@ -220,6 +229,64 @@ export const section8Data = {
       Warranty: "2 years",
     },
   },
+};
+
+export const section9Data = {
+  title: "Advantages",
+  subtitle:
+    " Our agriculture camera system comes with access to a web platform where you can compare your fields and communicate with your staff conveniently",
+  data: [
+    {
+      icon: GraduationCap,
+      title: "Small and mobile device",
+      description: "Compact and portable design for easy deployment",
+    },
+    {
+      icon: Clock,
+      title: "24/7 photo monitoring",
+      description: "Continuous NDVI/RGB image capture",
+    },
+    {
+      icon: Sun,
+      title: "Hyperlocal weather data",
+      description: "Precise local environmental monitoring",
+    },
+    {
+      icon: Battery,
+      title: "Solar-powered battery",
+      description: "Sustainable power source",
+    },
+    {
+      icon: Camera,
+      title: "In-built multispectral camera",
+      description: "Advanced imaging capabilities",
+    },
+    {
+      icon: Shield,
+      title: "UV-resistant plastic body",
+      description: "Durable weather-proof construction",
+    },
+    {
+      icon: MapPin,
+      title: "GPS-tracking",
+      description: "Accurate location monitoring",
+    },
+    {
+      icon: Tag,
+      title: "Affordable price",
+      description: "Cost-effective solution",
+    },
+    {
+      icon: Signal,
+      title: "GSM connectivity",
+      description: "Reliable data transmission",
+    },
+    {
+      icon: Bell,
+      title: "Notifications & daily reports",
+      description: "Regular updates and alerts",
+    },
+  ],
 };
 
 export const faqData = {

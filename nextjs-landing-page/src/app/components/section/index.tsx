@@ -77,7 +77,7 @@ export function SectionSubtitle({
   return (
     <p
       className={twMerge(
-        "text- mx-auto text-balance text-center text-xl",
+        "text- mx-auto max-w-screen-xl text-balance text-center text-xl",
         className,
       )}
       {...props}
