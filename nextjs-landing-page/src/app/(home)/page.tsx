@@ -1,3 +1,4 @@
+"use client";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import Image from "next/image";
 import Marquee from "@/components/ui/marquee";
@@ -11,6 +12,7 @@ import {
   faqData,
   footerData,
   heroData,
+  section10Data,
   section1Data,
   section2Data,
   section3Data,
@@ -38,6 +40,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import React from "react";
+import WorldMap from "react-svg-worldmap";
 
 function HeroSection() {
   return (
@@ -410,6 +413,20 @@ export default function Home() {
                 </p>
               </div>
             ))}
+          </div>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionTitle>{section10Data.title}</SectionTitle>
+        <SectionContent>
+          <div className="mx-auto w-fit">
+            <WorldMap
+              color="#c53684"
+              // title="Top 10 Populous Countries"
+              value-suffix="people"
+              size="xxl"
+              data={section10Data.data}
+            />
           </div>
         </SectionContent>
       </Section>
