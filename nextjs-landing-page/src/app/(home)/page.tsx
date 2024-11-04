@@ -1,3 +1,4 @@
+"use client";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import Image from "next/image";
 import Marquee from "@/components/ui/marquee";
@@ -11,6 +12,7 @@ import {
   faqData,
   footerData,
   heroData,
+  section10Data,
   section1Data,
   section2Data,
   section3Data,
@@ -19,6 +21,7 @@ import {
   section6Data,
   section7Data,
   section8Data,
+  section9Data,
 } from "./data";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -37,6 +40,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import React from "react";
+import WorldMap from "react-svg-worldmap";
 
 function HeroSection() {
   return (
@@ -387,6 +391,42 @@ export default function Home() {
                 </div>
               ),
             )}
+          </div>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionTitle>{section9Data.title}</SectionTitle>
+        <SectionSubtitle>{section9Data.subtitle}</SectionSubtitle>
+        <SectionContent>
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+            {section9Data.data.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center space-y-2 text-center"
+              >
+                <div className="rounded-lg bg-muted p-3">
+                  <feature.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-base font-medium">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </SectionContent>
+      </Section>
+      <Section>
+        <SectionTitle>{section10Data.title}</SectionTitle>
+        <SectionContent>
+          <div className="mx-auto w-fit">
+            <WorldMap
+              color="#c53684"
+              // title="Top 10 Populous Countries"
+              value-suffix="people"
+              size="xxl"
+              data={section10Data.data}
+            />
           </div>
         </SectionContent>
       </Section>
