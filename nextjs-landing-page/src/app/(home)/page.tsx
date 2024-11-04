@@ -139,7 +139,7 @@ function Footer() {
 
 function FaqSection() {
   return (
-    <Section>
+    <Section seperator={false}>
       <SectionTitle>{faqData.title}</SectionTitle>
       <SectionContent>
         <Accordion
