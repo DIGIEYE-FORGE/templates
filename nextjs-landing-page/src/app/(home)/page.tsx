@@ -9,10 +9,7 @@ import {
   SectionTitle,
 } from "../components/section";
 import {
-  faqData,
-  footerData,
-  heroData,
-  section10Data,
+  // section10Data,
   section1Data,
   section2Data,
   section3Data,
@@ -33,141 +30,12 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+
 import React from "react";
-import WorldMap from "react-svg-worldmap";
-
-function HeroSection() {
-  return (
-    <Section className="relative max-w-full">
-      <SectionTitle className="px-6 text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
-        {heroData.title}
-      </SectionTitle>
-      <SectionSubtitle className="max-w-screen-md px-6">
-        {heroData.subtitle}
-      </SectionSubtitle>
-      <div className="relative z-10 flex justify-center">
-        <RainbowButton className="h-12 uppercase">order Now</RainbowButton>
-      </div>
-      <div className="relative -translate-y-8 after:absolute after:inset-0 after:block after:bg-gradient-to-b after:from-white after:via-transparent after:to-transparent after:content-['']">
-        <Image
-          src="/images/home-hero.jpg"
-          alt="hero"
-          width={1600}
-          height={900}
-          className="px-0! mx-auto aspect-[2.2] w-full object-cover"
-        />
-      </div>
-    </Section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="w-full bg-slate-950 p-container text-slate-400">
-      <div className="container mx-auto">
-        <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-          <div className="space-x-4">
-            {footerData.policies.map((policy, index) => (
-              <React.Fragment key={policy.name}>
-                <Link
-                  href={policy.href}
-                  className="transition-colors hover:text-slate-200"
-                >
-                  {policy.name}
-                </Link>
-                {index < footerData.policies.length - 1 && <span>•</span>}
-              </React.Fragment>
-            ))}
-          </div>
-          <Link
-            href={`mailto:${footerData.contactEmail}`}
-            className="underline transition-colors hover:text-slate-200"
-          >
-            {footerData.contactEmail}
-          </Link>
-        </div>
-
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-          <div className="space-y-2">
-            <div className="font-medium text-emerald-500">
-              {footerData.company.name}
-            </div>
-            <div className="text-sm">
-              NIP {footerData.company.nip} • REGON {footerData.company.regon}
-            </div>
-            <div className="text-sm">{footerData.company.address}</div>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <div className="flex gap-4">
-              {footerData.socialLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="transition-colors hover:text-slate-200"
-                >
-                  <link.icon className="h-6 w-6" />
-                  <span className="sr-only">{link.name}</span>
-                </Link>
-              ))}
-            </div>
-            <div className="ml-4 flex items-center gap-2">
-              {footerData.certifications.map((cert) => (
-                <span key={cert} className="text-2xl">
-                  {cert}
-                </span>
-              ))}
-              <div className="ml-2 text-xs">
-                {footerData.complianceText.split("/").map((text, index) => (
-                  <React.Fragment key={index}>
-                    {text}
-                    {index === 0 && <br />}
-                  </React.Fragment>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-6 text-sm">{footerData.copyright}</div>
-      </div>
-    </footer>
-  );
-}
-
-function FaqSection() {
-  return (
-    <Section seperator={false}>
-      <SectionTitle>{faqData.title}</SectionTitle>
-      <SectionContent>
-        <Accordion
-          type="single"
-          collapsible
-          className="mx-auto w-full max-w-screen-md"
-        >
-          {faqData.data.map(({ question, answers }, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="py-6 text-2xl">
-                {question}
-              </AccordionTrigger>
-              <AccordionContent className="space-y-4 text-base text-gray-600">
-                {answers.map((answer, index) => (
-                  <p key={index}>{answer}</p>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </SectionContent>
-    </Section>
-  );
-}
+// import WorldMap from "react-svg-worldmap";
+import Footer from "../components/footer";
+import FaqSection from "./_components/faq-section";
+import HeroSection from "./_components/hero-section";
 
 export default function Home() {
   return (
@@ -416,7 +284,7 @@ export default function Home() {
           </div>
         </SectionContent>
       </Section>
-      <Section>
+      {/* <Section>
         <SectionTitle>{section10Data.title}</SectionTitle>
         <SectionContent>
           <div className="mx-auto w-fit">
@@ -429,7 +297,7 @@ export default function Home() {
             />
           </div>
         </SectionContent>
-      </Section>
+      </Section> */}
 
       <FaqSection />
       <Footer />

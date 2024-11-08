@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Upbar from "./components/upbar";
 import { twMerge } from "tailwind-merge";
+import Footer from "./components/footer";
 
 const BeVietnamPro = localFont({
   src: [
@@ -80,7 +81,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={twMerge(
-          "pt-20 antialiased",
+          "min-h-[100dvh] pt-20 antialiased",
           // lexend.className,
           BeVietnamPro.className,
           // montserrat.className,
@@ -88,6 +89,7 @@ export default function RootLayout({
       >
         <Upbar className="fixed top-0 z-[11] h-20 bg-background" />
         {children}
+        <Footer />
       </body>
     </html>
   );
