@@ -24,19 +24,21 @@ export function UpbarDesktop({ className, ...props }: IUpbarProps) {
   return (
     <header
       className={twMerge(
-        "py-4  w-full max-w-screen-2xl mx-auto px-container flex justify-between items-center ",
-        className
+        "mx-auto flex w-full max-w-screen-2xl items-center justify-between px-container py-4",
+        className,
       )}
       {...props}
     >
-      <Image
-        src="/logo.png"
-        alt="Logo"
-        width={300}
-        height={200}
-        className=" h-7 w-auto object-contain"
-        priority
-      />
+      <Link href="/">
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={300}
+          height={200}
+          className="h-7 w-auto object-contain"
+          priority
+        />
+      </Link>
       <NavigationMenu>
         <NavigationMenuList>
           {routes.map((route, index) => {
@@ -59,7 +61,7 @@ export function UpbarDesktop({ className, ...props }: IUpbarProps) {
                       <span className="text-lg capitalize">{name}</span>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="flex gap-4 w-fit p-6">
+                      <ul className="flex w-fit gap-4 p-6">
                         {subRoutes.map((subRoute, index) => {
                           const { name, href, image, description } = subRoute;
                           return (
@@ -75,13 +77,13 @@ export function UpbarDesktop({ className, ...props }: IUpbarProps) {
                                 alt={name}
                                 width={100}
                                 height={100}
-                                className="w-full aspect-[1.3] object-cover rounded-lg shrink-0"
+                                className="aspect-[1.3] w-full shrink-0 rounded-lg object-cover"
                               />
                               <h4 className="text-lg font-semibold capitalize">
                                 {name}
                               </h4>
                               {description && (
-                                <p className="first-letter:uppercase text-sm text-gray-500">
+                                <p className="text-sm text-gray-500 first-letter:uppercase">
                                   {description}
                                 </p>
                               )}

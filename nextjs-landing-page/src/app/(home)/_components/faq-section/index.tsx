@@ -8,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   AccordionContent,
-} from "@radix-ui/react-accordion";
+} from "@/components/ui/accordion";
 import { data, title } from "./data";
 
 export default function FaqSection() {
